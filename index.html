@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!--
+        TODO
+        - Utilizar cuenta propia en https://documentation.formspark.io/ para envío de formularios
+        - Probar otros campos de formulario
+        - Probar otros campos de validacion como minlength / maxlength y min / max
+    -->
+    <form action="https://submit-form.com/echo">
+        <input type="hidden" value="campana-instagram" name="source">
+        <div>
+            <label for="name">Nombre</label>
+            <input type="text" placeholder="Jhon" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="lastname">Apellidos</label>
+            <input type="text" placeholder="Doe" id="lastname" name="lastname">
+        </div>
+        <div>
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" name="dni" pattern="[0-9]{8}[A-Za-z]{1}" required>
+            <span>Necesitas introducir 8 números y una letra</span>
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <div>
+            <label for="message">Mensaje</label>
+            <textarea name="message" id="message"></textarea>
+        </div>
+        <div>
+            <input type="checkbox" id="legal">
+            <label for="legal">He leído y acepto las condiciones legales</label>
+        </div>
+        <div>
+            <p>¿Cómo nos has conocido?</p>
+            <input type="radio" id="meet-1" name="meet" value="prensa">
+            <label for="meet-1">Prensa</label>
+            <input type="radio" id="meet-2" name="meet" value="radio">
+            <label for="meet-2">Radio</label>
+            <input type="radio" id="meet-3" name="meet" value="tv">
+            <label for="meet-3">Tv</label>
+        </div>
+        <div>
+            <label for="option">Opciones</label>
+            <select name="option" id="option">
+                <option value="option-1">Opción 1</option>
+                <option value="option-2">Opción 2</option>
+                <option value="option-3">Opción 3</option>
+            </select>
+        </div>
+        <button type="submit">
+            Enviar
+        </button>
+    </form>
+
+
+    <form action=""></form>
+
+    <fieldset>
+        <legend>Elige color</legend>
+        <ul>
+            <li>
+                <label for="color-red">Rojo</label>
+                <input type="radio" id="color-red" name="color" value="red" checked>
+            </li>
+            <li>
+                <label for="color-blue">Azul</label>
+                <input type="radio" id="peas" name="color" value="blue">
+            </li>
+            <li>
+                <label for="color-green">Verde</label>
+                <input type="radio" id="color-green" name="color" value="green">
+            </li>
+        </ul>
+    </fieldset>
+    <!-- el primer checkbox aparecerá seleccionado por defecto -->
+    <label for="privacy-email">Acepto recibir noticias y/o ofertas por email</label>
+    <input type="checkbox" id="privacy-email" checked name="privacy-email">
+    <label for="privacy">Acepto las condiciones legales</label>
+    <input type="checkbox" id="privacy" name="privacy">
+
+    <label for="referred">¿Cómo nos conociste?</label>
+    <select name="referred" id="referred">
+        <option value="social">Redes sociales</option>
+        <option value="friend">Un amigo / conocido / Familiar</option>
+        <option value="search">Google/Bing/Yahoo/Otros</option>
+        <option value="forum">Foros especializados/foros aficionados</option>
+        <option value="unknown">Otro</option>
+    </select>
+
+    <!-- ejemplo de datalist -->
+    <label for="country">Selecciona un país:</label>
+    <input list="browsers" name="country" id="country" />
+    <datalist id="browsers">
+        <option value="España">
+        <option value="Portugal">
+        <option value="Francia">
+        <option value="Alemania">
+    </datalist>
+
+    <form>
+        <!-- este campo solo será válido si contiene un email correcto y no está vacío -->
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <!-- este campo solo será válido si contiene un dni con formato español correcto y no está vacío -->
+        <label for="dni">DNI:</label>
+        <input type="text" id="dni" name="dni" pattern="/^[0-9]{8,8}[A-Za-z]$/" required>
+        <button type="submit">
+            Enviar
+        </button>
+    </form>
+
+</body>
+
+</html>
